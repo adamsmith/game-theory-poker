@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="meerkat" basedir="../.." default="jar">
+
+	<property name="stage" value="stage4" />
+	<property name="bin" value="${basedir}/bin/" />
+	<property name="lib" value="${basedir}/lib" />
+	
+	<!-- set the classpath for the project        -->
+	<!-- this includes your generated class files -->
+	<!-- and every jar in your /lib directory     -->
+	<path id="classpath.path">
+		<pathelement location="${bin}" />
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+    <target name="jar" description="JARs the Task">
+        <jar destfile="${lib}\lovebotv11.jar" update="true">
+			<fileset dir="${bin}"/>
+			<!--<fileset dir="${src}"/>-->
+        </jar>
+    </target>
+
+	<!-- most ant scripts have a build target -->
+	<target name="build" depends="jar" />
+	
+</project>
