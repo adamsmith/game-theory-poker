@@ -28,6 +28,7 @@ public class DoShowdowns {
 	
 	public static void main(String[] args) {
         try {
+		System.out.println("Hello world");
         	
 			// ------------------------------------------------------------
 			// load up all of the output files
